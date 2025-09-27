@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../features/exploreScreen/explore_screen.dart';
 import 'app_routes.dart';
 
 class RouterGenerationConfig {
@@ -20,7 +21,7 @@ class RouterGenerationConfig {
         path: AppRoutes.exploreScreen,
         name: AppRoutes.exploreScreen,
         builder: (_, _) {
-          return Container();
+          return const ExploreScreen();
         },
       ),
       GoRoute(
