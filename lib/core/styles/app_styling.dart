@@ -3,10 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppStyles {
-  static TextStyle onBoardingTitleStyle = GoogleFonts.inter(
+  static TextStyle black32SemiboldStyle = GoogleFonts.inter(
     fontSize: 32,
     fontWeight: FontWeight.w600,
-    color: AppColors.whiteColor,
+    color: AppColors.blackColor,
   );
   static TextStyle onBoardingDescriptionStyle = GoogleFonts.inter(
     fontSize: 14,
