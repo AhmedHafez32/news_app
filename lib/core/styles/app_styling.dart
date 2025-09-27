@@ -8,21 +8,6 @@ class AppStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.blackColor,
   );
-  static TextStyle onBoardingDescriptionStyle = GoogleFonts.inter(
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
-    color: AppColors.whiteColor,
-  );
-  static TextStyle white14SemiBoldStyle = GoogleFonts.inter(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    color: AppColors.whiteColor,
-  );
-  static TextStyle black16MediumStyle = GoogleFonts.inter(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-    color: AppColors.blackColor,
-  );
   static TextStyle gray14Regular = GoogleFonts.inter(
     fontSize: 14,
     fontWeight: FontWeight.w400,
