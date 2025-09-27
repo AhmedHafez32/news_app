@@ -13,44 +13,48 @@ class CustomArticleCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-      Column(
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
-            width: 238,
-            child: Text(
-              title,
-              style: AppStyles.black32SemiboldStyle.copyWith(fontSize: 18),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 238,
+              child: Text(
+                title,
+                style: AppStyles.black32SemiboldStyle.copyWith(fontSize: 18),
+              ),
+            ),
+            const HeightSpace(height: 12),
+            Row(
+              children: [
+                Text(
+                  '$authorName . $date',
+                  style: AppStyles.gray14Regular.copyWith(
+                    fontSize: 12,
+                    color: Color(0xff6D6265),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: CachedNetworkImage(
+              imageUrl:
+              imageUrl ??
+                  'https://images.pexels.com/photos/158651/news-newsletter-newspaper-information-158651.jpeg?cs=srgb&dl=pexels-pixabay-158651.jpg&fm=jpg',
+              height: 80,
+              width: 112,
+              fit: BoxFit.fill,
             ),
           ),
-          const HeightSpace(height: 12),
-          Row(
-            children: [
-              Text(
-                '$authorName . $date',
-                style: AppStyles.gray14Regular.copyWith(
-                  fontSize: 12,
-                  color: Color(0xff6D6265),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: CachedNetworkImage(
-            imageUrl:
-            imageUrl ??
-                'https://images.pexels.com/photos/158651/news-newsletter-newspaper-information-158651.jpeg?cs=srgb&dl=pexels-pixabay-158651.jpg&fm=jpg',
-            height: 80,
-            width: 112,
-            fit: BoxFit.fill,
-          ),
-        ),
-    ],);
+      ],),
+    );
   }
 }
