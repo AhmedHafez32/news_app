@@ -1,10 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/core/networking/dio_helper.dart';
 import 'core/routing/router_generation_config.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+
+  DioHelper.initDio();
 
   runApp(
     EasyLocalization(
