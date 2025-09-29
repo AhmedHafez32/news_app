@@ -2,18 +2,18 @@
 //
 //     final topHeadLiensModel = topHeadLiensModelFromJson(jsonString);
 
-class TopHeadLiensModel {
+class ArticlesModel {
   String? status;
   int? totalResults;
   List<Article>? articles;
 
-  TopHeadLiensModel({
+  ArticlesModel({
     this.status,
     this.totalResults,
     this.articles,
   });
 
-  factory TopHeadLiensModel.fromJson(Map<String, dynamic> json) => TopHeadLiensModel(
+  factory ArticlesModel.fromJson(Map<String, dynamic> json) => ArticlesModel(
     status: json["status"],
     totalResults: json["totalResults"],
     articles: json["articles"] == null ? [] : List<Article>.from(json["articles"]!.map((x) => Article.fromJson(x))),

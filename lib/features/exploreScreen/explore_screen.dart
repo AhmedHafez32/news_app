@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:news_app/core/styles/app_colors.dart';
 import 'package:news_app/core/styles/app_styling.dart';
 import 'package:news_app/core/widgets/spacing_widgets.dart';
-import 'package:news_app/features/exploreScreen/models/top_headline_models.dart';
 import 'package:news_app/features/exploreScreen/services/explore_screen_services.dart';
 import 'package:news_app/features/exploreScreen/widgets/custom_article_card_widget.dart';
 import 'package:news_app/features/exploreScreen/widgets/custom_category_item_widget.dart';
 import 'package:news_app/features/exploreScreen/widgets/top_items_category_explore_screen.dart';
 import '../../generated/Local_key.g.dart';
+import 'models/article_model.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -46,8 +46,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
           }
 
           if (snapshot.hasData) {
-            TopHeadLiensModel topHeadLiensModel =
-                snapshot.data! as TopHeadLiensModel;
+            ArticlesModel topHeadLiensModel =
+                snapshot.data! as ArticlesModel;
             if (topHeadLiensModel.totalResults == 0) {
               return Center(child: Text(LocaleKeys.no_results.tr()));
             }

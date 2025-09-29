@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:news_app/core/networking/dio_end_points.dart';
 import 'package:news_app/core/networking/dio_helper.dart';
-import 'package:news_app/features/exploreScreen/models/top_headline_models.dart';
-
 import '../../../core/constance/app_constance.dart';
+import '../models/article_model.dart';
 
 
 class ExploreScreenServices {
@@ -15,7 +14,7 @@ class ExploreScreenServices {
       );
 
       if(response.statusCode == 200){
-        TopHeadLiensModel topHeadLiensModel = TopHeadLiensModel.fromJson(response.data);
+        ArticlesModel topHeadLiensModel = ArticlesModel.fromJson(response.data);
         return topHeadLiensModel;
       }
     } catch (e) {
