@@ -38,6 +38,8 @@ class CustomCategoryItemWidget extends StatelessWidget {
           child: Text(
             title,
             style: AppStyles.black32SemiboldStyle.copyWith(fontSize: 18),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
         const HeightSpace(height: 12),

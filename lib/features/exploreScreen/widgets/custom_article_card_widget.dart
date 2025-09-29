@@ -33,6 +33,8 @@ class CustomArticleCardWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       title,
                       style: AppStyles.black32SemiboldStyle.copyWith(
                         fontSize: 18,
@@ -44,14 +46,17 @@ class CustomArticleCardWidget extends StatelessWidget {
               const HeightSpace(height: 12),
               Row(
                 children: [
-                  Text(
-                    '$authorName . $date',
-                    style: AppStyles.gray14Regular.copyWith(
-                      fontSize: 12,
-                      color: Color(0xff6D6265),
+                  SizedBox(
+                    width: 238,
+                    child: Text(
+                      '$authorName . $date',
+                      style: AppStyles.gray14Regular.copyWith(
+                        fontSize: 12,
+                        color: Color(0xff6D6265),
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
