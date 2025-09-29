@@ -21,7 +21,8 @@ class CodegenLoader extends AssetLoader{
   "business": "اعمال",
   "entertainment": "ترفية",
   "cansel": "الغاء",
-  "search_result": "نتيجة البحث"
+  "search_result": "نتيجة البحث",
+    "no_results" : "لا توجد بيانات"
 };
 static const Map<String,dynamic> _en = {
   "explore": "Explore",
@@ -30,7 +31,8 @@ static const Map<String,dynamic> _en = {
   "business": "Business",
   "entertainment": "Entertainment",
   "cansel": "Cancel",
-  "search_result": "Search Result"
+  "search_result": "Search Result",
+  "no_results" : "No Results"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
 }

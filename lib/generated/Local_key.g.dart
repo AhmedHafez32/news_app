@@ -10,4 +10,5 @@ abstract class  LocaleKeys {
   static const entertainment = 'entertainment';
   static const cansel = 'cansel';
   static const search_result = 'search_result';
+  static const no_results = 'no_results';
 }
