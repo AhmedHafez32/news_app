@@ -43,11 +43,15 @@ class CustomCategoryItemWidget extends StatelessWidget {
         const HeightSpace(height: 12),
         Row(
           children: [
-            Text(
-              '$authorName . $date',
-              style: AppStyles.gray14Regular.copyWith(
-                fontSize: 12,
-                color: Color(0xff6D6265),
+            Expanded(
+              child: Text(
+                '$authorName . $date',
+                style: AppStyles.gray14Regular.copyWith(
+                  fontSize: 12,
+                  color: Color(0xff6D6265),
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
