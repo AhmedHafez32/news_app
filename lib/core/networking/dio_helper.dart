@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:dio/dio.dart';
 import 'package:news_app/core/networking/dio_end_points.dart';
 
@@ -14,7 +12,7 @@ class DioHelper {
     );
   }
 
-  getRequest({
+  static getRequest({
     required String endPoint,
     required Map<String, dynamic> query,
   }) async {
@@ -26,7 +24,7 @@ class DioHelper {
     }
   }
 
-  postRequest({
+  static postRequest({
     required String endPoint,
     required Map<String, dynamic> data,
   }) async {

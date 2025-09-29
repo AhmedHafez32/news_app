@@ -1,5 +1,5 @@
 abstract class DioEndPoints{
-  static const String baseUrl = '';
+  static const String baseUrl = 'https://newsapi.org/v2/';
   static const String searchEndPoint = 'everything';
   static const String topHeadLinenEndPoint = 'top-headlines';
 
