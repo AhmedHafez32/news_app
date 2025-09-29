@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/exploreScreen/explore_screen.dart';
+import '../../features/searchResult/search_result_screen.dart';
 import 'app_routes.dart';
 
 class RouterGenerationConfig {
@@ -34,8 +35,9 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.searchResultScreen,
         name: AppRoutes.searchResultScreen,
-        builder: (_, _) {
-          return Container();
+        builder: (_, state) {
+          String query = state.extra as String;
+          return SearchResultScreen(query: query,);
         },
       ),
       GoRoute(
