@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/core/styles/app_colors.dart';
 import 'package:news_app/core/styles/app_styling.dart';
 import 'package:news_app/core/widgets/spacing_widgets.dart';
@@ -23,6 +25,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           LocaleKeys.explore.tr(),
           style: AppStyles.black32SemiboldStyle,
@@ -66,6 +69,10 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         TopItemsCategoryExploreScreen(
                           text: LocaleKeys.travel.tr(),
                           onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: LocaleKeys.travel.tr(),
+                            );
                             setState(() {
                               selectedCategory = LocaleKeys.travel.tr();
                             });
@@ -76,6 +83,10 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         TopItemsCategoryExploreScreen(
                           text: LocaleKeys.technology.tr(),
                           onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: LocaleKeys.technology.tr(),
+                            );
                             setState(() {
                               selectedCategory = LocaleKeys.technology.tr();
                             });
@@ -86,6 +97,10 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         TopItemsCategoryExploreScreen(
                           text: LocaleKeys.business.tr(),
                           onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: LocaleKeys.business.tr(),
+                            );
                             setState(() {
                               selectedCategory = LocaleKeys.business.tr();
                             });
@@ -96,6 +111,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         TopItemsCategoryExploreScreen(
                           text: LocaleKeys.entertainment.tr(),
                           onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: LocaleKeys.entertainment.tr(),
+                            );
+
                             setState(() {
                               selectedCategory = LocaleKeys.entertainment.tr();
                             });
@@ -122,10 +142,14 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             ? topHeadLiensModel.articles![0].urlToImage
                             : 'https://images.pexels.com/photos/158651/news-newsletter-newspaper-information-158651.jpeg?cs=srgb&dl=pexels-pixabay-158651.jpg&fm=jpg',
                     title: topHeadLiensModel.articles![0].title ?? 'No Title',
-                    authorName: topHeadLiensModel.articles![0].author ?? 'No Name',
-                    date: topHeadLiensModel.articles![0].publishedAt != null ? DateFormat(
-                      'yyyy-MM-dd - KK:mm',
-                    ).format(topHeadLiensModel.articles![0].publishedAt!) : 'No Date',
+                    authorName:
+                        topHeadLiensModel.articles![0].author ?? 'No Name',
+                    date:
+                        topHeadLiensModel.articles![0].publishedAt != null
+                            ? DateFormat('yyyy-MM-dd - KK:mm').format(
+                              topHeadLiensModel.articles![0].publishedAt!,
+                            )
+                            : 'No Date',
                   ),
                 ),
 
@@ -138,12 +162,17 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     itemBuilder: (BuildContext context, int index) {
                       Article article = topHeadLiensModel.articles![index];
                       return CustomArticleCardWidget(
-                        imageUrl: article.urlToImage ?? 'https://images.pexels.com/photos/158651/news-newsletter-newspaper-information-158651.jpeg?cs=srgb&dl=pexels-pixabay-158651.jpg&fm=jpg',
+                        imageUrl:
+                            article.urlToImage ??
+                            'https://images.pexels.com/photos/158651/news-newsletter-newspaper-information-158651.jpeg?cs=srgb&dl=pexels-pixabay-158651.jpg&fm=jpg',
                         authorName: article.author ?? 'No Name',
                         title: article.title ?? 'No Title',
-                        date: article.publishedAt != null ? DateFormat(
-                          'yyyy-MM-dd - KK:mm',
-                        ).format(article.publishedAt!) : 'No Date',
+                        date:
+                            article.publishedAt != null
+                                ? DateFormat(
+                                  'yyyy-MM-dd - KK:mm',
+                                ).format(article.publishedAt!)
+                                : 'No Date',
                       );
                     },
                   ),
